@@ -1,6 +1,3 @@
-import tkinter
-
-
 import tkinter as tk
 
 class Application(tk.Frame):
@@ -11,19 +8,16 @@ class Application(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        self.hi_there = tk.Button(self)
-        self.hi_there["text"] = "Hello World\n(click me)"
-        self.hi_there["command"] = self.say_hi
-        self.hi_there.pack(side="top")
+        self._entrada = tk.Entry(self, width=50)
+        self._entrada.insert(0, "Número Uno")
+        #self.hi_there["text"] = "Hello World\n(click me)"
+        #self.hi_there["command"] = self.say_hi
+        self._entrada.pack(side="top")
 
-        self.quit = tk.Button(self, text="QUIT", fg="red",
+        self.quit = tk.Button(self, text="SALIR", fg="red",
                               command=self.master.destroy)
         self.quit.pack(side="bottom")
-
-    def say_hi(self):
-        print("hi there, everyone!")
 
 root = tk.Tk()
 app = Application(master=root)
 app.mainloop()
-
